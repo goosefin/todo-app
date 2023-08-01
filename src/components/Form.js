@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import ListItem from './ListItem'
+import styles from '../style.module.css'
 
-export default function Todo(){
+const Form = ()=>{
     const [todo,setTodo] = useState("")
     const [todoList,setTodoList] = useState([])
 
@@ -16,16 +17,18 @@ export default function Todo(){
         setTodo("")
     }
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input value={todo} onChange={handleChange}type='text'></input>
-                <button type="submit">Add</button>
+        <div className={styles.todoform}>
+            <form  onSubmit={handleSubmit}>
+                <input className={styles.todoinput} placeholder="Add Todo Item" value={todo} onChange={handleChange}type='text'></input>
+                <button className={styles.todobutton} type="submit">Add</button>
             </form>
-            <div>
+            {/* <div>
                 {todoList.map((todo,i)=>(
                     <ListItem name={todo} key={i}/>
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }
+
+export default Form
