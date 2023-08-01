@@ -1,6 +1,6 @@
 import Form from "./components/Form";
 import Header from "./components/Header";
-import Todo from './components/Todo';
+import TodoList from './components/TodoList'
 import {useState} from 'react'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         todoList={todoList} 
         setTodoList={setTodoList}
       />
-      <Todo/>
+      <TodoList todoList={todoList}/>
     </div>
   );
 }
