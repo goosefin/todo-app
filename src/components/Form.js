@@ -10,7 +10,6 @@ const Form = ({todo, setTodo, todoList, setTodoList})=>{
         e.preventDefault()
         setTodoList([...todoList,{name:todo, id:shortid.generate()}])
         setTodo('')
-        console.log(todoList)
     }
     return(
         <div className={styles.todoform}>
@@ -23,11 +22,6 @@ const Form = ({todo, setTodo, todoList, setTodoList})=>{
                     type='text'></input>
                 <button className={styles.todobutton} type="submit">Add</button>
             </form>
-            {/* <div>
-                {todoList.map((todo,i)=>(
-                    <ListItem name={todo} key={i}/>
-                ))}
-            </div> */}
         </div>
     )
 }
